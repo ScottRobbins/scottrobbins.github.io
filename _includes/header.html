@@ -24,6 +24,7 @@
 						<a href="{{ item.url }}" class="menu__list__item__link button--text">{{ item.title }}</a>
 					</li>
 					{% endfor %}
+
 					<li class="menu__cta">
 						<a href="#" class="menu__cta__link button--text contact-trigger js-contact">Get In Touch</a>
 					</li>
@@ -31,7 +32,9 @@
 			</div>
 		</nav>
 
+		{% if site.data.settings.contact_settings.enabled %}
 		<a href="#" class="header__cta button--fill contact-trigger js-contact">Get In Touch</a>
+		{% endif %}
 	</div>
 
 </header>
