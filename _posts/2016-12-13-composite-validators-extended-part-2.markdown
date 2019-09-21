@@ -6,11 +6,13 @@ featured_image: "/images/post-extending-composite-validator-part-2-bg.jpg"
 published: true
 ---
 
+<p class="post-padding">&nbsp;</p>
+
 If you haven't read [my post on Composite Validators](/2016/11/16/composite-validators/) and [my post on returning multiple errors from them](/2016/12/03/composite-validators-extended/), take a look at those first, as this is going to build off of what was created in those posts.
 
 ---
 
-# What's the problem?
+### What's the problem?
 
 All of the user input we have been validating thus far had rules that were all required to pass in order for the input to be valid. A password had to have a lowercase letter **and** an uppercase letter **and** a number.
 
@@ -18,7 +20,7 @@ There are many scenarios in which you may only need some combination of the vali
 
 You want the phone number to be valid **or** an empty phone number.
 
-# Our Example
+### Our Example
 
 The example I'm going to show will expand upon the password validator, since by now you are familiar with that and more importantly I am lazy.
 
@@ -32,7 +34,7 @@ I'm going to expand that last rule to be:
 * Must have one lowercase letter
 * Must have either a number **or** a special character
 
-# And Composite Validator
+### And Composite Validator
 
 What we were previously calling `CompositeValidator` I am just going to rename to `AndCompositeValidator`.
 
@@ -63,7 +65,7 @@ struct AndCompositeValidator: Validator {
 }
 {% endhighlight %}
 
-# Or Composite Validator
+### Or Composite Validator
 
 For this one, if any of the validators passed in return a valid result, than the `OrCompositeValidator` will return that the input is valid. Otherwise, every error will be returned in the array with the invalid response.
 
@@ -93,7 +95,7 @@ struct OrCompositeValidator: Validator {
 }
 {% endhighlight %}
 
-# Validator Configurator
+### Validator Configurator
 
 This is just a class I use to instantiate validators.
 
@@ -131,7 +133,7 @@ struct ValidatorConfigurator {
 
 I didn't bother showing the special character validator. It's very similar to the others, just different regex.
 
-# Example of it used
+### Example of it used
 
 <p>
     {% highlight swift %}
@@ -153,7 +155,7 @@ valid
 valid
 ```
 
-# Conclusion
+### Conclusion
 
 There are many modifications and additions that can be added to this pattern to make it more powerful and fit the needs of an application. To get more ideas, you can look at Microsoft's [specification pattern](https://en.wikipedia.org/wiki/Specification_pattern), which is what a lot of this is based on.
 

@@ -5,17 +5,17 @@ date:       2016-11-16 12:00:00
 featured_image: "/images/post-composite-validator-bg.jpg"
 ---
 
-# What is the Composite Pattern?
+### What is the Composite Pattern?
 
 The composite pattern is a design pattern in which a group of objects can be treated the same way as a single object.
 
 The idea is to compose objects into tree structures to represent part-whole hierarchies.
 
-# How is this going to help us with validating user input?
+### How is this going to help us with validating user input?
 
 User input fields tend to have many small rules that need to be followed in order for the input to be considered "valid". Using the composite pattern can be an elegant way to break up this code into smaller units, and allow them to be easily added/removed/changed later.
 
-# Our Example
+### Our Example
 
 Imagine you have a registration form in your application. Your registration form has 2 input fields:
 * Email
@@ -32,7 +32,7 @@ Each of these fields has their own requirements for the user input to be conside
 * Must be at least 8 characters long
 * Must have one uppercase letter, lowercase letter and a number
 
-# Let's see some code!
+### Let's see some code!
 In order to set this up, there are a few main sections:
 1. [Validator Protocol](#validatorProtocol)
 2. [Individual Validators](#individualValidators)
@@ -40,7 +40,7 @@ In order to set this up, there are a few main sections:
 4. [Validator Configurator](#validatorConfigurator)
 5. [Example of it used](#exampleOfItBeingUsed)
 
-# Validator Protocol {#validatorProtocol}
+### Validator Protocol {#validatorProtocol}
 We're going to create a protocol that every validator will conform to (the validators are the objects that will decide if the user input is valid or not).
 
 Before creating the protocol, let's create the result type that will be returned for each validator:
@@ -78,11 +78,11 @@ enum PasswordValidatorError: Error {
 }
 {% endhighlight %}
 
-# Individual Validators {#individualValidators}
+### Individual Validators {#individualValidators}
 
 Let's take a look at how these validators are implemented.
 
-#### Empty String Validator
+##### Empty String Validator
 {% highlight swift %}
 struct EmptyStringValidator: Validator {
 
@@ -103,7 +103,7 @@ struct EmptyStringValidator: Validator {
 }
 {% endhighlight %}
 
-#### Email Format Validator
+##### Email Format Validator
 {% highlight swift %}
 struct EmailFormatValidator: Validator {
     func validate(_ value: String) -> ValidatorResult {
@@ -120,7 +120,7 @@ struct EmailFormatValidator: Validator {
 }
 {% endhighlight %}
 
-#### Password Length Validator
+##### Password Length Validator
 {% highlight swift %}
 struct PasswordLengthValidator: Validator {
 
@@ -134,7 +134,7 @@ struct PasswordLengthValidator: Validator {
 }
 {% endhighlight %}
 
-#### Uppercase Letter Validator
+##### Uppercase Letter Validator
 {% highlight swift %}
 struct UppercaseLetterValidator: Validator {
 
@@ -154,7 +154,7 @@ struct UppercaseLetterValidator: Validator {
 
 ... and just imagine I made a `LowercaseLetterValidator` and a `ContainsNumberValidator`. The implementations would be the same as the `UppercaseLetterValidator`, just with different regex.
 
-# Composite Validator {#compositeValidator}
+### Composite Validator {#compositeValidator}
 
 The whole idea behind this is that we will be able to compose all of those individual validators into a larger tree of validators and allow this tree to be used in the same way as if it were a leaf.
 
@@ -189,7 +189,7 @@ struct CompositeValidator: Validator {
 
 Now we have all of the parts needed to compose the different validators, let's create a configurator class to do that work.
 
-# Validator Configurator {#validatorConfigurator}
+### Validator Configurator {#validatorConfigurator}
 
 This is a helper class to make the code easy to read, use, and change later.
 
@@ -241,7 +241,7 @@ You can see that both the email and password validators are actually just compos
 
 ![Password Validator Diagram](/images/passwordValidator.png)
 
-# Example of it used {#exampleOfItBeingUsed}
+### Example of it used {#exampleOfItBeingUsed}
 
 <p>
     {% highlight swift %}
@@ -271,7 +271,7 @@ invalid(PasswordValidatorError.noUppercaseLetter)
 valid
 ```
 
-# Conclusion
+### Conclusion
 
 I think this is an interesting way to organize user input validating code. It provides a way to break up code into smaller, succinct units, and makes it simple to change code later.
 

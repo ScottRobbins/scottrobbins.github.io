@@ -6,11 +6,13 @@ featured_image: "/images/post-extending-composite-validator-bg.jpg"
 published: true
 ---
 
+<p class="post-padding">&nbsp;</p>
+
 If you haven't read [my post on Composite Validators](/2016/11/16/composite-validators/), take a look at that first, as this is going to build off of what was created in that post.
 
 ---
 
-# Returning multiple errors in validators
+### Returning multiple errors in validators
 
 In order to give users the best feedback when validating their input, it may be useful to know everything that's wrong with what they entered, not just the first error encountered. Because of this, the implementation we created before needs to be modified to return multiple errors if the input is invalid.
 
@@ -18,7 +20,7 @@ So what does that look like?
 
 We just have to make some relatively small changes in a few places.
 
-# Validator Protocol
+### Validator Protocol
 
 We just need to change the invalid case to return an array of errors:
 {% highlight swift %}
@@ -28,7 +30,7 @@ enum ValidatorResult {
 }
 {% endhighlight %}
 
-# Individual Validators
+### Individual Validators
 
 These are all still going to return a single error, but they just need to do it as an array of one error. For Example:
 {% highlight swift %}
@@ -44,7 +46,7 @@ struct PasswordLengthValidator: Validator {
 }
 {% endhighlight %}
 
-# Composite Validator
+### Composite Validator
 
 This one is essentially just packaging things up a little differently:
 {% highlight swift %}
@@ -76,7 +78,7 @@ struct CompositeValidator: Validator {
 
 We're going to use `reduce` to help with this. It will iterate through all of the validators and call `validate` on them. If it is valid, it will just return whatever the previous result was. If it's invalid, it will return a new error, concatenating the new found errors with any previous ones.
 
-# Example of it used
+### Example of it used
 
 <p>
     {% highlight swift %}
@@ -97,7 +99,7 @@ invalid([PasswordValidatorError.noUppercaseLetter])
 valid
 ```
 
-# Conclusion
+### Conclusion
 
 There are many ways to take this pattern of using composite validators and modify it to fit the different needs an application might have. Being able to return multiple errors can be essential in order to provide useful feedback to users.
 
