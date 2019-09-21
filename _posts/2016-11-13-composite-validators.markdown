@@ -45,26 +45,26 @@ In order to set this up, there are a few main sections:
 We're going to create a protocol that every validator will conform to (the validators are the objects that will decide if the user input is valid or not).
 
 Before creating the protocol, let's create the result type that will be returned for each validator:
-{% highlight swift %}
+```swift
 enum ValidatorResult {
     case valid
     case invalid(error: Error)
 }
-{% endhighlight %}
+```
 
 Each validator is going to respond with whether the input it was given was valid or not. If it is not valid, it will return some type of error explaining why.
 
 Great, now let's look at this validator protocol.
-{% highlight swift %}
+```swift
 protocol Validator {
     func validate(_ value: String) -> ValidatorResult
 }
-{% endhighlight %}
+```
 
 So, each validator is going to have a function that accepts the input as a `String` and returns a `ValidatorResult`.
 
 Before showing the individual validators, here are the errors that can be specified for invalid inputs:
-{% highlight swift %}
+```swift
 enum EmailValidatorError: Error {
     case empty
     case invalidFormat
@@ -77,14 +77,14 @@ enum PasswordValidatorError: Error {
     case noLowercaseLetter
     case noNumber
 }
-{% endhighlight %}
+```
 
 ### Individual Validators {#individualValidators}
 
 Let's take a look at how these validators are implemented.
 
 ##### Empty String Validator
-{% highlight swift %}
+```swift
 struct EmptyStringValidator: Validator {
 
     // This error is passed via the initializer to allow this validator to be reused
@@ -102,10 +102,10 @@ struct EmptyStringValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ##### Email Format Validator
-{% highlight swift %}
+```swift
 struct EmailFormatValidator: Validator {
     func validate(_ value: String) -> ValidatorResult {
         let magicEmailRegexStolenFromTheInternet = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
@@ -119,10 +119,10 @@ struct EmailFormatValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ##### Password Length Validator
-{% highlight swift %}
+```swift
 struct PasswordLengthValidator: Validator {
 
     func validate(_ value: String) -> ValidatorResult {
@@ -133,10 +133,10 @@ struct PasswordLengthValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ##### Uppercase Letter Validator
-{% highlight swift %}
+```swift
 struct UppercaseLetterValidator: Validator {
 
     func validate(_ value: String) -> ValidatorResult {
@@ -151,7 +151,7 @@ struct UppercaseLetterValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ... and just imagine I made a `LowercaseLetterValidator` and a `ContainsNumberValidator`. The implementations would be the same as the `UppercaseLetterValidator`, just with different regex.
 
@@ -163,7 +163,7 @@ To do this, we are going to create the `CompositeValidator`. This validator is g
 
 For the sake of simplicity, it is just going to return the first invalid response. (You could, however, change the logic so that validators return arrays of errors for invalid responses, [which I wrote about in this post](/2016/12/03/composite-validators-extended/))
 
-{% highlight swift %}
+```swift
 struct CompositeValidator: Validator {
 
     private let validators: [Validator]
@@ -186,7 +186,7 @@ struct CompositeValidator: Validator {
         return .valid
     }
 }
-{% endhighlight %}
+```
 
 Now we have all of the parts needed to compose the different validators, let's create a configurator class to do that work.
 
@@ -194,7 +194,7 @@ Now we have all of the parts needed to compose the different validators, let's c
 
 This is a helper class to make the code easy to read, use, and change later.
 
-{% highlight swift %}
+```swift
 struct ValidatorConfigurator {
 
     // Interface
@@ -228,7 +228,7 @@ struct ValidatorConfigurator {
                                   ContainsNumberValidator())
     }
 }
-{% endhighlight %}
+```
 
 You can see that both the email and password validators are actually just composites of other validators. And even the "passwordStrengthValidator" is a composite.
 
@@ -244,22 +244,20 @@ You can see that both the email and password validators are actually just compos
 
 ### Example of it used {#exampleOfItBeingUsed}
 
-<p>
-    {% highlight swift %}
-    let validatorConfigurator = ValidatorConfigurator.sharedInstance
-    let emailValidator = validatorConfigurator.emailValidator()
-    let passwordValidator = validatorConfigurator.passwordValidator()
+```swift
+let validatorConfigurator = ValidatorConfigurator.sharedInstance
+let emailValidator = validatorConfigurator.emailValidator()
+let passwordValidator = validatorConfigurator.passwordValidator()
 
-    print(emailValidator.validate(""))
-    print(emailValidator.validate("invalidEmail@"))
-    print(emailValidator.validate("validEmail@validDomain.com"))
+print(emailValidator.validate(""))
+print(emailValidator.validate("invalidEmail@"))
+print(emailValidator.validate("validEmail@validDomain.com"))
 
-    print(passwordValidator.validate(""))
-    print(passwordValidator.validate("psS$"))
-    print(passwordValidator.validate("passw0rd"))
-    print(passwordValidator.validate("paSSw0rd"))
-    {% endhighlight %}
-</p>
+print(passwordValidator.validate(""))
+print(passwordValidator.validate("psS$"))
+print(passwordValidator.validate("passw0rd"))
+print(passwordValidator.validate("paSSw0rd"))
+```
 
 This will print the output:
 ```

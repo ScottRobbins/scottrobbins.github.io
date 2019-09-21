@@ -24,17 +24,17 @@ We just have to make some relatively small changes in a few places.
 ### Validator Protocol
 
 We just need to change the invalid case to return an array of errors:
-{% highlight swift %}
+```swift
 enum ValidatorResult {
     case valid
     case invalid(errors: [Error])
 }
-{% endhighlight %}
+```
 
 ### Individual Validators
 
 These are all still going to return a single error, but they just need to do it as an array of one error. For Example:
-{% highlight swift %}
+```swift
 struct PasswordLengthValidator: Validator {
 
     func validate(_ value: String) -> ValidatorResult {
@@ -45,12 +45,12 @@ struct PasswordLengthValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Composite Validator
 
 This one is essentially just packaging things up a little differently:
-{% highlight swift %}
+```swift
 struct CompositeValidator: Validator {
 
     private let validators: [Validator]
@@ -75,23 +75,22 @@ struct CompositeValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 We're going to use `reduce` to help with this. It will iterate through all of the validators and call `validate` on them. If it is valid, it will just return whatever the previous result was. If it's invalid, it will return a new error, concatenating the new found errors with any previous ones.
 
 ### Example of it used
 
-<p>
-    {% highlight swift %}
-    let validatorConfigurator = ValidatorConfigurator.sharedInstance
-    let passwordValidator = validatorConfigurator.passwordValidator()
+```swift
+let validatorConfigurator = ValidatorConfigurator.sharedInstance
+let passwordValidator = validatorConfigurator.passwordValidator()
 
-    print(passwordValidator.validate("paSs"))
-    print(passwordValidator.validate("password"))
-    print(passwordValidator.validate("passw0rd"))
-    print(passwordValidator.validate("paSSw0rd"))
-    {% endhighlight %}
-</p>
+print(passwordValidator.validate("paSs"))
+print(passwordValidator.validate("password"))
+print(passwordValidator.validate("passw0rd"))
+print(passwordValidator.validate("paSSw0rd"))
+```
+
 This will print the output:
 ```
 invalid([PasswordValidatorError.tooShort, PasswordValidatorError.noUppercaseLetter, PasswordValidatorError.noNumber])

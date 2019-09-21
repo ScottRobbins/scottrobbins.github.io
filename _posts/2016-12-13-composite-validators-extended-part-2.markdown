@@ -39,7 +39,7 @@ I'm going to expand that last rule to be:
 
 What we were previously calling `CompositeValidator` I am just going to rename to `AndCompositeValidator`.
 
-{% highlight swift %}
+```swift
 struct AndCompositeValidator: Validator {
 
     private let validators: [Validator]
@@ -64,13 +64,13 @@ struct AndCompositeValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Or Composite Validator
 
 For this one, if any of the validators passed in return a valid result, than the `OrCompositeValidator` will return that the input is valid. Otherwise, every error will be returned in the array with the invalid response.
 
-{% highlight swift %}
+```swift
 struct OrCompositeValidator: Validator {
 
     private let validators: [Validator]
@@ -94,13 +94,13 @@ struct OrCompositeValidator: Validator {
         }
     }
 }
-{% endhighlight %}
+```
 
 ### Validator Configurator
 
 This is just a class I use to instantiate validators.
 
-{% highlight swift %}
+```swift
 struct ValidatorConfigurator {
 
     // Interface
@@ -130,23 +130,21 @@ struct ValidatorConfigurator {
                                     ContainsSpecialCharacterValidator())
     }
 }
-{% endhighlight %}
+```
 
 I didn't bother showing the special character validator. It's very similar to the others, just different regex.
 
 ### Example of it used
 
-<p>
-    {% highlight swift %}
-    let validatorConfigurator = ValidatorConfigurator.sharedInstance
-    let passwordValidator = validatorConfigurator.passwordValidator()
+```swift
+let validatorConfigurator = ValidatorConfigurator.sharedInstance
+let passwordValidator = validatorConfigurator.passwordValidator()
 
-    print(passwordValidator.validate("Password"))
-    print(passwordValidator.validate("Password1"))
-    print(passwordValidator.validate("Password$"))
-    print(passwordValidator.validate("Password1$"))
-    {% endhighlight %}
-</p>
+print(passwordValidator.validate("Password"))
+print(passwordValidator.validate("Password1"))
+print(passwordValidator.validate("Password$"))
+print(passwordValidator.validate("Password1$"))
+```
 
 This will print the output:
 ```
