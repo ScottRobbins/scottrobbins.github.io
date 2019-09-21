@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      "Extending your Composite Validators - Part 2"
+subtitle:   "Separating AndCompositeValidator and OrCompositeValidator"
 date:       2016-12-12 12:00:00
 featured_image: "/images/post-extending-composite-validator-part-2-bg.jpg"
 published: true

@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      "Composite Validators"
+subtitle:   "Using the composite pattern to help organize user input validating code"
 date:       2016-11-16 12:00:00
 featured_image: "/images/post-composite-validator-bg.jpg"
 ---

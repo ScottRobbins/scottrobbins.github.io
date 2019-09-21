@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      "Extending your Composite Validators - Part 1"
+subtitle:   "Returning multiple errors"
 date:       2016-12-03 12:00:00
 featured_image: "/images/post-extending-composite-validator-bg.jpg"
 published: true
