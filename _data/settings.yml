@@ -72,6 +72,7 @@ color_settings:
 font_settings:
   font_embed_header: '<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu+Mono:400,700" rel="stylesheet">'
   font_embed_body: '<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">'
+  font_embed_code: '<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet"'
   title_font: 'Rubik, sans-serif'
   body_font: '"Lora", "Times New Roman", serif'
   regular_weight: 400
