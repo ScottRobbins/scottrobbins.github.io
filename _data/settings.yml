@@ -70,9 +70,10 @@ color_settings:
   error_color: '#D64541'
 
 font_settings:
-  font_embed: '<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu+Mono:400,700" rel="stylesheet">'
+  font_embed_header: '<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu+Mono:400,700" rel="stylesheet">'
+  font_embed_body: '<link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">'
   title_font: 'Rubik, sans-serif'
-  body_font: '"Ubuntu Mono", sans-serif'
+  body_font: '"Lora", "Times New Roman", serif'
   regular_weight: 400
   bold_weight: 700
   site_title:
@@ -142,27 +143,27 @@ font_settings:
     line_height: 32
     line_height_small: 28
   p:
-    size: 18
+    size: 20
     size_small: 17
     weight: 400
     letter_spacing: 0.04
     letter_spacing_small: 0
     line_height: 28
   p_small:
-    size: 16
+    size: 18
     size_small: 15
     weight: 400
     letter_spacing: 0
     line_height: 24
   label:
-    size: 14
+    size: 16
     small_size: 12
     weight: 500
     letter_spacing: 0.8
     small_letter_spacing: 0.5
     line_height: 16
   footnote:
-    size: 13
+    size: 14
     weight: 400
     letter_spacing: -0.04
     line_height: 12
