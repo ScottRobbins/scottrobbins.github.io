@@ -24,8 +24,10 @@ layout: default
 
 			<article class="post__content {% if page.highlight_first %}highlight-first{% endif %}">
 				{{ page.content }}
+				{% if page.github_link %}
+				<a href="{{ page.github_link }}" class="button--fill">View on Github</a>
+				{% endif %}
 			</article>
-
 		</div>
 
 	</section>
