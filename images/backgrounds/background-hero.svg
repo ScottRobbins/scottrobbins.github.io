@@ -1,21 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1025" height="542" viewBox="0 0 1025 542">
-  <g fill="none" fill-rule="evenodd" stroke="#4C60E6" stroke-linecap="round" stroke-linejoin="round" opacity=".7" transform="translate(2)">
-    <path stroke-width="6" d="M96.25,33.5 C91.9166667,28.7991453 91.9166667,24.6324786 96.25,21" opacity=".24"/>
-    <path stroke-width="5" d="M546.25,197.5 C543.25,191.67094 543.25,186.504274 546.25,182" opacity=".6" transform="matrix(1 0 0 -1 0 379.5)"/>
-    <path stroke-width="5" d="M161.25,138.5 C160.25,136.67094 161.25,133.504274 164.25,129" opacity=".24" transform="matrix(1 0 0 -1 0 267.5)"/>
-    <path stroke-width="5" d="M506.265625,373.5 C498.598958,371.67094 496.265625,368.504274 499.265625,364" opacity=".24" transform="matrix(1 0 0 -1 0 737.5)"/>
-    <path stroke-width="4" d="M223.557692,217.5 C217.891026,214.337607 216.557692,210.504274 219.557692,206" opacity=".24" transform="matrix(1 0 0 -1 0 423.5)"/>
-    <path stroke-width="6" d="M784,249.5 C781.333333,245.175214 781.333333,241.34188 784,238" opacity=".24" transform="matrix(-1 0 0 1 1566 0)"/>
-    <path stroke-width="6" d="M1019.6 299.5C1015.6 295.175214 1014.93333 291.34188 1017.6 288M342.6 149.5C338.6 145.175214 337.933333 141.34188 340.6 138" opacity=".24"/>
-    <path stroke-width="6" d="M708,78.5 C709.333333,74.1752137 711.333333,70.3418803 714,67" opacity=".24" transform="matrix(1 0 0 -1 0 145.5)"/>
-    <path stroke-width="4" d="M-1.687539e-14,187.5 C-1.687539e-14,184.508547 1.33333333,181.34188 4,178" opacity=".6" transform="matrix(-1 0 0 1 4 0)"/>
-    <path stroke-width="4" d="M927,404.5 C927,401.508547 928.333333,398.34188 931,395" opacity=".6" transform="matrix(-1 0 0 1 1858 0)"/>
-    <path stroke-width="4" d="M679,364.5 C679,361.508547 680.333333,358.34188 683,355" opacity=".24" transform="matrix(-1 0 0 1 1362 0)"/>
-    <path stroke-width="6" d="M866.491025,99.2966334 C863.824359,95.3479154 863.824359,91.8479154 866.491025,88.7966334" opacity=".24" transform="scale(-1 1) rotate(30 0 -3136.01)"/>
-    <path stroke-width="4" d="M292.75,55 C286.75,57 284.75,61 286.75,67" opacity=".6" transform="matrix(-1 0 0 1 578.75 0)"/>
-    <path stroke-width="4" d="M970.75,11 C964.75,13 962.75,17 964.75,23" opacity=".6" transform="matrix(-1 0 0 1 1934.75 0)"/>
-    <path stroke-width="7" d="M65.1674737,490.223583 C59.1674737,492.223583 57.1674737,496.223583 59.1674737,502.223583" opacity=".24" transform="rotate(-70 61.792 496.224)"/>
-    <path stroke-width="6" d="M505.491025,10.2966334 C502.824359,6.34791542 502.824359,2.84791542 505.491025,-0.20336663" opacity=".24" transform="rotate(30 504.491 5.047)"/>
-    <path stroke-width="4" d="M397.491025,539.296633 C394.824359,535.347915 394.824359,531.847915 397.491025,528.796633" opacity=".6" transform="scale(-1 1) rotate(30 0 -945.678)"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1025px" height="547px" viewBox="0 0 1025 547" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Untitled 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.7" stroke-linecap="round" stroke-linejoin="round">
+        <g id="background-hero" transform="translate(2.000000, 5.000000)" stroke="#5A00C6">
+            <g id="Group">
+                <path d="M96.25,33.5 C91.9166667,28.7991453 91.9166667,24.6324786 96.25,21" id="Path" stroke-width="6" opacity="0.24"></path>
+                <path d="M546.25,197.5 C543.25,191.67094 543.25,186.504274 546.25,182" id="Path" stroke-width="5" opacity="0.6" transform="translate(545.125000, 189.750000) scale(-1, 1) rotate(-180.000000) translate(-545.125000, -189.750000) "></path>
+                <path d="M161.25,138.5 C160.25,136.67094 161.25,133.504274 164.25,129" id="Path" stroke-width="5" opacity="0.24" transform="translate(162.562500, 133.750000) scale(-1, 1) rotate(-180.000000) translate(-162.562500, -133.750000) "></path>
+                <path d="M506.265625,373.5 C498.598958,371.67094 496.265625,368.504274 499.265625,364" id="Path" stroke-width="5" opacity="0.24" transform="translate(502.132812, 368.750000) scale(-1, 1) rotate(-180.000000) translate(-502.132812, -368.750000) "></path>
+                <path d="M223.557692,217.5 C217.891026,214.337607 216.557692,210.504274 219.557692,206" id="Path" stroke-width="4" opacity="0.24" transform="translate(220.778846, 211.750000) scale(-1, 1) rotate(-180.000000) translate(-220.778846, -211.750000) "></path>
+                <path d="M784,249.5 C781.333333,245.175214 781.333333,241.34188 784,238" id="Path" stroke-width="6" opacity="0.24" transform="translate(783.000000, 243.750000) scale(-1, 1) translate(-783.000000, -243.750000) "></path>
+                <path d="M1019.6,299.5 C1015.6,295.175214 1014.93333,291.34188 1017.6,288 M342.6,149.5 C338.6,145.175214 337.933333,141.34188 340.6,138" id="Shape" stroke-width="6" opacity="0.24"></path>
+                <path d="M708,78.5 C709.333333,74.1752137 711.333333,70.3418803 714,67" id="Path" stroke-width="6" opacity="0.24" transform="translate(711.000000, 72.750000) scale(-1, 1) rotate(-180.000000) translate(-711.000000, -72.750000) "></path>
+                <path d="M0,187.5 C0,184.508547 1.33333333,181.34188 4,178" id="Path" stroke-width="4" opacity="0.6" transform="translate(2.000000, 182.750000) scale(-1, 1) translate(-2.000000, -182.750000) "></path>
+                <path d="M927,404.5 C927,401.508547 928.333333,398.34188 931,395" id="Path" stroke-width="4" opacity="0.6" transform="translate(929.000000, 399.750000) scale(-1, 1) translate(-929.000000, -399.750000) "></path>
+                <path d="M679,364.5 C679,361.508547 680.333333,358.34188 683,355" id="Path" stroke-width="4" opacity="0.24" transform="translate(681.000000, 359.750000) scale(-1, 1) translate(-681.000000, -359.750000) "></path>
+                <path d="M866.491102,99.2966128 C863.824436,95.3478948 863.824436,91.8478948 866.491102,88.7966128" id="Path" stroke-width="6" opacity="0.24" transform="translate(865.491102, 94.046613) scale(-1, 1) rotate(30.000000) translate(-865.491102, -94.046613) "></path>
+                <path d="M292.75,55 C286.75,57 284.75,61 286.75,67" id="Path" stroke-width="4" opacity="0.6" transform="translate(289.375000, 61.000000) scale(-1, 1) translate(-289.375000, -61.000000) "></path>
+                <path d="M970.75,11 C964.75,13 962.75,17 964.75,23" id="Path" stroke-width="4" opacity="0.6" transform="translate(967.375000, 17.000000) scale(-1, 1) translate(-967.375000, -17.000000) "></path>
+                <path d="M65.1667702,490.223412 C59.1667702,492.223412 57.1667702,496.223412 59.1667702,502.223412" id="Path" stroke-width="7" opacity="0.24" transform="translate(61.791770, 496.223412) rotate(-70.000000) translate(-61.791770, -496.223412) "></path>
+                <path d="M505.491205,10.2966951 C502.824539,6.34797716 502.824539,2.84797716 505.491205,-0.203304888" id="Path" stroke-width="6" opacity="0.24" transform="translate(504.491205, 5.046695) rotate(30.000000) translate(-504.491205, -5.046695) "></path>
+                <path d="M397.491017,539.296635 C394.82435,535.347917 394.82435,531.847917 397.491017,528.796635" id="Path" stroke-width="4" opacity="0.6" transform="translate(396.491016, 534.046635) scale(-1, 1) rotate(30.000000) translate(-396.491016, -534.046635) "></path>
+            </g>
+        </g>
+    </g>
 </svg>
