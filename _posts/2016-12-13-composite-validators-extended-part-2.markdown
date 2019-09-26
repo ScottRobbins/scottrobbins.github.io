@@ -9,7 +9,7 @@ published: true
 
 <p class="post-padding">&nbsp;</p>
 
-If you haven't read [my post on Composite Validators](/blog/composite-validators/) and [my post on returning multiple errors from them](/blog/composite-validators-extended/), take a look at those first, as this is going to build off of what was created in those posts.
+If you haven't read [my post on Composite Validators](/blog/composite-validators) and [my post on returning multiple errors from them](/blog/composite-validators-extended), take a look at those first, as this is going to build off of what was created in those posts.
 
 ---
 
