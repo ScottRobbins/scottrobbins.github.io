@@ -83,14 +83,13 @@
 
 		$(document).on('click', 'a', function (event) {
 
-			// Don't follow link
-			event.preventDefault();
-
 			// Get the link target
 			var thisTarget = $(this).attr('href');
 
 			// If we don't want to use ajax
 			if ($(this).hasClass('js-no-ajax')) {
+				// Don't follow link
+				event.preventDefault();
 
 				// Use the given link
 				window.location = thisTarget;
@@ -98,23 +97,32 @@
 
 			// if it's a contact modal
 			else if ($(this).hasClass('js-contact')) {
+				// Don't follow link
+				event.preventDefault();
 
 				// Open contact modal
 			}
 
 			else if ($(this).hasClass('js-signup')) {
+				// Don't follow link
+				event.preventDefault();
+
 				// Open signup modal
 				$('.modal--signup').addClass('modal--on');
 			}
 
 			// If link is handled by some JS action – e.g. fluidbox
 			else if ($(this).is('.gallery__item__link')) {
+				// Don't follow link
+				event.preventDefault();
 
 				// Let JS handle it
 			}
 
 			// If link is external
 			else if (thisTarget.indexOf('http') >= 0) {
+				// Don't follow link
+				event.preventDefault();
 
 				// Go to the external link
 				window.open(thisTarget, '_blank');
