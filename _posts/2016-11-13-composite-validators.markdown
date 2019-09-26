@@ -35,13 +35,13 @@ Each of these fields has their own requirements for the user input to be conside
 
 ### Let's see some code!
 In order to set this up, there are a few main sections:
-1. [Validator Protocol](#validatorProtocol)
-2. [Individual Validators](#individualValidators)
-3. [Composite Validator](#compositeValidator)
-4. [Validator Configurator](#validatorConfigurator)
-5. [Example of it used](#exampleOfItBeingUsed)
+1. [Validator Protocol](#validator-protocol)
+2. [Individual Validators](#individual-validators)
+3. [Composite Validator](#composite-validator)
+4. [Validator Configurator](#validator-configurator)
+5. [Example of it used](#example-of=it-being-used)
 
-### Validator Protocol {#validatorProtocol}
+### Validator Protocol
 We're going to create a protocol that every validator will conform to (the validators are the objects that will decide if the user input is valid or not).
 
 Before creating the protocol, let's create the result type that will be returned for each validator:
@@ -79,7 +79,7 @@ enum PasswordValidatorError: Error {
 }
 ```
 
-### Individual Validators {#individualValidators}
+### Individual Validators
 
 Let's take a look at how these validators are implemented.
 
@@ -155,7 +155,7 @@ struct UppercaseLetterValidator: Validator {
 
 ... and just imagine I made a `LowercaseLetterValidator` and a `ContainsNumberValidator`. The implementations would be the same as the `UppercaseLetterValidator`, just with different regex.
 
-### Composite Validator {#compositeValidator}
+### Composite Validator
 
 The whole idea behind this is that we will be able to compose all of those individual validators into a larger tree of validators and allow this tree to be used in the same way as if it were a leaf.
 
@@ -190,7 +190,7 @@ struct CompositeValidator: Validator {
 
 Now we have all of the parts needed to compose the different validators, let's create a configurator class to do that work.
 
-### Validator Configurator {#validatorConfigurator}
+### Validator Configurator
 
 This is a helper class to make the code easy to read, use, and change later.
 
@@ -242,7 +242,7 @@ You can see that both the email and password validators are actually just compos
 
 ![Password Validator Diagram](/images/passwordValidator.png)
 
-### Example of it used {#exampleOfItBeingUsed}
+### Example of it used
 
 ```swift
 let validatorConfigurator = ValidatorConfigurator.sharedInstance
