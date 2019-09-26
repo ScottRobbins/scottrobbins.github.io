@@ -278,7 +278,7 @@ If you have any comments/suggestions, hit me up on twitter or my email linked be
 
 ---
 
-Make sure to read [Part 1](/2016/12/03/composite-validators-extended) and [Part 2](/2016/12/12/composite-validators-extended-part-2/) to find out how to extend your composite validators to be more powerful.
+Make sure to read [Part 1](/blog/composite-validators-extended) and [Part 2](/blog/composite-validators-extended-part-2/) to find out how to extend your composite validators to be more powerful.
 
 ---
 

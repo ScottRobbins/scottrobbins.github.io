@@ -9,7 +9,7 @@ published: true
 
 <p class="post-padding">&nbsp;</p>
 
-If you haven't read [my post on Composite Validators](/2016/11/16/composite-validators/), take a look at that first, as this is going to build off of what was created in that post.
+If you haven't read [my post on Composite Validators](/blog/composite-validators/), take a look at that first, as this is going to build off of what was created in that post.
 
 ---
 
@@ -107,5 +107,5 @@ Hit me up on twitter or my email linked below with any feedback!
 
 ---
 
-Take a look at [Part 2](/2016/12/12/composite-validators-extended-part-2) of extending composite validators to take advantage of `OrCompositeValidators`
+Take a look at [Part 2](/blog/composite-validators-extended-part-2) of extending composite validators to take advantage of `OrCompositeValidators`
 
