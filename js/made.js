@@ -135,8 +135,8 @@
 				// Change navTarget
 				navTarget = thisTarget;
 
-				// Switch the URL via History
-				History.pushState(null, docTitle, thisTarget);
+				// // Switch the URL via History
+				// History.pushState(null, docTitle, thisTarget);
 			}
 
 		});
