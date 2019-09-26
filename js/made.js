@@ -129,14 +129,20 @@
 
 			}
 
+			// If this is an anchor link
+			else if (thisTarget.indexOf("#") != -1) {
+				return // nothing to do, let the browser do its thing
+			}
+
 			// If link is internal
 			else {
+				event.preventDefault();
 
 				// Change navTarget
 				navTarget = thisTarget;
 
-				// // Switch the URL via History
-				// History.pushState(null, docTitle, thisTarget);
+				// Switch the URL via History
+				History.pushState(null, docTitle, thisTarget);
 			}
 
 		});
