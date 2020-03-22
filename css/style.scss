@@ -26,11 +26,14 @@ $accent-color: {{ site.data.settings.color_settings.accent_color }};
 
 $error-color: {{ site.data.settings.color_settings.error_color }};
 
+$code-background-color: {{ site.data.settings.color_settings.code_background_color }};
+$code-default-text-color: {{ site.data.settings.color_settings.code_default_text_color }};
 
 // Fonts
 
 $body-font: {{ site.data.settings.font_settings.body_font }};
 $title-font: {{ site.data.settings.font_settings.title_font }};
+$code-font: {{ site.data.settings.font_settings.code_font }}
 
 $regular-weight: {{ site.data.settings.font_settings.regular_weight }};
 $bold-weight: {{ site.data.settings.font_settings.bold_weight }};
