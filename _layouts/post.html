@@ -18,7 +18,7 @@ layout: default
 		<div class="wrap">
 
 			<article class="post__content {% if page.highlight_first %}highlight-first{% endif %}">
-				{{ page.content }}
+				{% include anchor_headings.html html=page.content %}
 			</article>
 
 			<div class="post__more grid">

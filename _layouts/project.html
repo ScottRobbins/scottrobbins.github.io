@@ -23,7 +23,7 @@ layout: default
 		<div class="wrap">
 
 			<article class="post__content {% if page.highlight_first %}highlight-first{% endif %}">
-				{{ page.content }}
+				{% include anchor_headings.html html=page.content %}
 				{% if page.github_link %}
 				<a href="{{ page.github_link }}" class="button--fill">View on Github</a>
 				{% endif %}
