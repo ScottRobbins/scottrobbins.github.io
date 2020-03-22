@@ -3,3 +3,6 @@ _site
 .jekyll-metadata
 *.swp
 *.swo
+vendor/*
+.bundle/*
+.DS_STORE
