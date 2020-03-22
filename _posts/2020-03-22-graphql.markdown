@@ -120,7 +120,7 @@ Everything goes under **_data_** (There's also a top level for **_errors_** not 
 
 <br />
 
-# Problems with REST APIs
+# Problems With REST APIs
 
 <br />
 
@@ -251,7 +251,7 @@ Pretty simple, GraphQL will **only** return what you ask for.
 
 <br />
 
-# Related benefits of GraphQL & Libraries
+# Related Benefits of GraphQL & Libraries
 
 <br />
 
