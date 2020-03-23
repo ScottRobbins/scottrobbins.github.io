@@ -69,6 +69,8 @@ color_settings:
   accent_color: '#5A00C6'
   border_color: '#ECEDEF'
   error_color: '#D64541'
+  code_background_color: '#1b1f2318'
+  code_default_text_color: '#000'
 
 font_settings:
   font_embed_header: '<link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700|Ubuntu+Mono:400,700" rel="stylesheet">'
@@ -76,6 +78,7 @@ font_settings:
   font_embed_code: '<link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet"'
   title_font: 'Rubik, sans-serif'
   body_font: '"Lora", "Times New Roman", serif'
+  code_font: '"Source Code Pro", monospace;'
   regular_weight: 400
   bold_weight: 700
   site_title:

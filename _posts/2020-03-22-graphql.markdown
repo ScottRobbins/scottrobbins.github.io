@@ -63,7 +63,7 @@ type Author {
 
 Here you can see it describing the graph of your data. At the top level we have the top level query, which has books. Each book has things like a title and author. And an author has a name, age, and books. 
 
-One thing that may stand out to you is that it's typed. You also see some exclamation points after some of the types. By default, everything you define is nullable; **!** means it's nonnull.  
+One thing that may stand out to you is that it's typed. You also see some exclamation points after some of the types. By default, everything you define is nullable; `!` means it's nonnull.  
 
 Now that we see how the server defines its schema, let's look at what a GraphQL query looks like:
 
@@ -85,7 +85,7 @@ query getBooksWithAuthors {
 
 <br />
 
-Looking at the query above, you can see we gave it a name of **_getBooksWithAuthors_**. It's requesting all of the books, and for each book it's reuesting its **_id_**, **_title_**, and **_author_**. From the author, it's asking for the **_id_**, **_name_**, and **_age_**. Notice that the **_Author_** type would also let a query reuest all of the books by that author, but this query is _not_ requesting it. This is something fundamental to GraphQL; It lets you request all of the data you want from the entire schema, and **only** what you want. 
+Looking at the query above, you can see we gave it a name of `getBooksWithAuthors`. It's requesting all of the books, and for each book it's reuesting its `id`, `title`, and `author`. From the author, it's asking for the `id`, `name`, and `age`. Notice that the `Author` type would also let a query reuest all of the books by that author, but this query is _not_ requesting it. This is something fundamental to GraphQL; It lets you request all of the data you want from the entire schema, and **only** what you want. 
 
 Let's look at what kind of data that returns to you:
 
@@ -116,7 +116,7 @@ Let's look at what kind of data that returns to you:
 }
 ```
 
-Everything goes under **_data_** (There's also a top level for **_errors_** not shown here since we don't have any errors). Under **_author_** there are no books, because those were not requested.
+Everything goes under `data` (There's also a top level for `errors` not shown here since we don't have any errors). Under `author` there are no books, because those were not requested.
 
 <br />
 
@@ -167,26 +167,26 @@ If you're following REST principles very strictly, these are some of the resourc
 * Recommended Locations
 
 This could potentially translate into these REST endpoint calls
-* /trip/\<id>
-* /reservation/\<id>
-* 3 * /guest/\<id>
-* /properties/\<id>
-* /plans?date=\<June 15>
-* N * /plans/\<id>
-* /recommendations?date=\<June 15>
-* N * /recommendations/\<id>
+* `/trip/<id>`
+* `/reservation/<id>`
+* `3 * /guest/<id>`
+* `/properties/<id>`
+* `/plans?date=<June 15>`
+* `N * /plans/<id>`
+* `/recommendations?date=<June 15>`
+* `N * /recommendations/<id>`
 
-**\# of API requests:** 8 + \# plans + \# recommendations
+**\# of API requests:** `8 + #plans + #recommendations`
 
 That is a ridiculous number of requests to load a single page in a mobile app. If the user isn't on a fast connection, it could have a pretty big effect on the user experience. It also brings up some UI concerns, like if parts of the UI should populate as they load in? What things should populate together? What if there's an error requesting one of them? The code to manage all of those concerns can get a little messy. 
 
 ##### Common ways to solve this in REST - Sideloading
 
-**"Sideloading"** is when a request can provide something like an **_include_** query parameter that lists related objects to include in the response.
+**"Sideloading"** is when a request can provide something like an `include` query parameter that lists related objects to include in the response.
 
-Ex: **_/reservations/\<id>?include=guests_**
+Ex: `/reservations/\<id>?include=guests`
 
-This would give the guest information under a **_"included"_** key in the response. 
+This would give the guest information under a `included` key in the response. 
 
 The client still has to do some extra work to decode this response into a meaningful data structure. And there's unfortunately not a real standard on how to implement this on the server. So while it _can_ be built with a lot of possible functionality, many implementations are different and have their own limitations. It also requires that the server developers accounted for the client's needs ahead of time.
 
@@ -235,7 +235,7 @@ query getTripInfo(id: $id, date: $date) {
 }
 ```
 
-FYI: The **_id_** and **_date_** passed into **_getTripInfo_** are examples of how you would pass arguments to a query.
+FYI: The `id` and `date` passed into `getTripInfo` are examples of how you would pass arguments to a query.
 
 ### Overfetching
 
@@ -294,7 +294,7 @@ query getBooksWithoutAuthors {
 }
 ```
 
-That will also be pulled from the cache, since all of the information required to satisfy the query was cached as a result of your earlier **_getBooksWithAuthors_** query.
+That will also be pulled from the cache, since all of the information required to satisfy the query was cached as a result of your earlier `getBooksWithAuthors` query.
 
 This is a huge time saver. I never realized how much code I was writing to manage caches until Apollo started doing it for me.
 
